@@ -1,6 +1,5 @@
-from unittest.mock import patch
-from app.main import cryptocurrency_action
 from unittest.mock import patch, Mock
+from app.main import cryptocurrency_action
 
 
 @patch("app.main.get_exchange_rate_prediction")
