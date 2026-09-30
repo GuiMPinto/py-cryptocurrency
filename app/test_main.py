@@ -17,14 +17,14 @@ def test_buy_when_prediction_is_5_percent_lower(mock_pred: Mock) -> None:
 
 
 @patch("app.main.get_exchange_rate_prediction")
-def test_buy_when_prediction_is_5_percent_lower(mock_pred: Mock) -> None:
+def test_buy_when_prediction_limit_lower(mock_pred: Mock) -> None:
     mock_pred.return_value = 95  # em 5% abaixo
     result = cryptocurrency_action(100)
     assert result == "Do nothing"
 
 
 @patch("app.main.get_exchange_rate_prediction")
-def test_buy_when_prediction_is_5_percent_higher(mock_pred: Mock) -> None:
+def test_buy_when_prediction_limit_higher(mock_pred: Mock) -> None:
     mock_pred.return_value = 105  # em 5% acima
     result = cryptocurrency_action(100)
     assert result == "Do nothing"
